@@ -5,8 +5,7 @@
 
 # Motive
 If you have ever used Nethunter-Rooted, then you would have definitely come across Nethunter-terminal.  
-Nethunter-terminal is one of the good interfaces but, it doesn't support that much customizability when compared to other interfaces such as Termux.  
-If you ever took a fancy to start the **Rooted Kali chroot** in **termux** but faild. Then this is the right place.
+Nethunter-terminal is one of the good interfaces but, it doesn't support that much customizability when compared to other interfaces such as Termux. If you ever took a fancy to start the **Rooted Kali chroot** in **termux** but faild. Then this is the right place.
 
 # Pre-requisites
 1. Install git in Termux: `pkg install git`
