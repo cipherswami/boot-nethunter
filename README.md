@@ -23,8 +23,8 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 # Additinol Tweaks
 - Direct Run the file i.e execute `boot-nethuter` instead of `./boot-nethunter` .  
   This is done by adding HOME directory to PATHs Variable, which is implemented by _**.bashrc**_ file.  
-  You can simply copy my _.bashrc_ file that is included in the Repo: `cp Nethunter/.bashrc $HOME`     
-If you already have your own _.bashrc_ file you can add contents of my  _.bashrc_ file to the end of your _.bashrc_.
+  You can simply copy my _.bashrc_ file that is included in the Repo: `cp ./Nethunter/.bashrc $HOME`     
+If you already have your own _.bashrc_ file, Then you can add contents of my  _.bashrc_ file to the end of your _.bashrc_ file.
 
 # Creator
 > **Author**: [name_is_cipher](https://github.com/name-is-cipher)  
