@@ -3,7 +3,7 @@
 
 **NOTE**: This is not the same as _Nethunter Rootless_.
 
-# MOTIVE
+# Motive
 If you have ever used Nethunter-Rooted, then you would have definitely come across Nethunter-terminal. Nethunter-terminal is one of the good interfaces but, it doesn't support that much customizability when compared to other interfaces such as Termux. If you ever took a fancy to start the **Rooted Kali chroot** in **termux** but faild. Then this is the right place.
 
 # Pre-requisites
@@ -21,11 +21,10 @@ If you have ever used Nethunter-Rooted, then you would have definitely come acro
 # Additinol Tweaks
 - Direct Run the file i.e execute `boot-nethuter` instead of `./boot-nethunter` .  
   This is done by adding HOME directory to PATHs Variable, which is implemented by _**.bashrc**_ file.  
-  You can simply copy my _.bashrc_ file that is included in the Repo: `cp Nethunter/.bashrc $HOME` 
-    
+  You can simply copy my _.bashrc_ file that is included in the Repo: `cp Nethunter/.bashrc $HOME`     
 If you already have your own _.bashrc_ file you can add contents of my  _.bashrc_ file to the end of your _.bashrc_.
 
-
+# Creator
 > **Author**: [name_is_cipher](https://github.com/name-is-cipher)  
 > **Mail**: aravindswami135@gmail.com
 
