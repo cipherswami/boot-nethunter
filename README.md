@@ -15,7 +15,7 @@ If you have ever used Nethunter-Rooted, then you would have definitely come acro
 1. Git this repo to HOME directory of Termux: `git clone https://github.com/name-is-cipher/boot-nethunter.git ./Nethunter`
 2. Copy "boot-nethunter.sh" file from download git folder to HOME directory of Termux: `cp ./Nethunter/boot-nethunter.sh ./`
 3. Make "boot-nethunter.sh" executable: `chmod +x boot-nethunter.sh`
-5. ET Volia, setup is finshed !!!
+5. et voilà !!!, setup is finshed.
 6. Run the Executable to boot kali-Chroot: `./boot-nethunter.sh`
 
 # Additinol Tweaks
@@ -23,5 +23,6 @@ If you have ever used Nethunter-Rooted, then you would have definitely come acro
 If you already have your own _.bashrc_ file you can add contents my  _.bashrc_ file to the end of your _.bashrc_.
 
 
-? Author: Aravind Swami [github: name_is_cipher]
-? Mail: aravindswami135@gmail.com
+> **Author**: Aravind Swami [github: name_is_cipher]  
+> **Mail**: aravindswami135@gmail.com
+
