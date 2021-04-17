@@ -8,7 +8,7 @@ If you have ever used Nethunter-Rooted, then you would have definitely come acro
 
 If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild. Then this is the right place.
 
-# Pre-requisites
+# Pre-Requisites
 1. Install git in Termux: `pkg install git`
 2. Grant root access to Termux by entering the following command: `su`  
    and grant root access with what ever root manager you use.
@@ -24,7 +24,7 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 - Direct Run the file i.e execute `boot-nethuter` instead of `./boot-nethunter` .  
   This is done by adding HOME directory to PATHs Variable, which is implemented by _**.bashrc**_ file.  
   You can simply copy my _.bashrc_ file that is included in the Repo: `cp ./Nethunter/.bashrc $HOME`     
-If you already have your own _.bashrc_ file, Then you can add contents of my  _.bashrc_ file to the end of your _.bashrc_ file.
+If you already have your own _.bashrc_ file, then you can add contents of my  _.bashrc_ file to the end of your _.bashrc_ file.
 
 # Creator
 > **Author**: [name_is_cipher](https://github.com/name-is-cipher)  
