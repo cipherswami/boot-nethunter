@@ -24,7 +24,7 @@ else
     echo "export PATH=\$PATH:/data/data/com.offsec.nethunter/files/scripts/bin" >> .boot_kali.sh
     echo "bootkali" >> .boot_kali.sh
     echo " " >> .boot_kali.sh
-    echo "# Author: Aravind Swami [github: name_is_cipher]" >> .boot_kali.sh
+    echo "# Author: Aravind Swami [github: name-is-cipher]" >> .boot_kali.sh
     echo "# Mail: aravindswami135@gmail.com" >> .boot_kali.sh
 
     # This Adds executive permissions to ".boot_kali.sh" file.
@@ -35,5 +35,5 @@ else
 
 fi
 
-# Author: Aravind Swami [github: name_is_cipher]
+# Author: Aravind Swami [github: name-is-cipher]
 # Mail: aravindswami135@gmail.com
