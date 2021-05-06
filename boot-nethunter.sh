@@ -25,6 +25,7 @@ else
     echo "bootkali" >> .boot_kali.sh
     echo " " >> .boot_kali.sh
     echo "# Author: Aravind Swami [github: name-is-cipher]" >> .boot_kali.sh
+    echo "# Twitter: name_is_cipher" >> .boot_kali.sh
     echo "# Mail: aravindswami135@gmail.com" >> .boot_kali.sh
 
     # This Adds executive permissions to ".boot_kali.sh" file.
@@ -36,4 +37,5 @@ else
 fi
 
 # Author: Aravind Swami [github: name-is-cipher]
+# Twitter: name_is_cipher
 # Mail: aravindswami135@gmail.com
