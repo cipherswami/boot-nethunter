@@ -1,37 +1,46 @@
-# This is a simple shell script whcih checkes for ".boot_kali.sh" file in present directory,
+# This is a simple shell script whcih checkes for "$HOME/.termux/boot_kali.sh" file in present directory,
 # if presents it executes kali Chroot, if not it creates one and executes kali Chroot.
 
-FILE=./.boot_kali.sh  # Variable name FILE is being assigned to the file in present directory.
+TERMUX=$HOME/.termux  # Variable name FILE is being assigned to the file in present directory.
+BOOTKALI=$HOME/.termux/boot_kali.sh
 
-if [ -f "$FILE" ]; then
+if [ -f "$TERMUX" ]; then
 
-    # sources ".boot_kali.sh" to superuser child process.
-    su -c source ./.boot_kali.sh 
+else
+
+    mkdir .termux
+
+fi
+
+if [ -f "BOOTKALI" ]; then
+
+    # sources "$HOME/.termux/boot_kali.sh" to superuser child process.
+    su -c source ./$HOME/.termux/boot_kali.sh 
 
 else 
 
     # This is the envirnoment that needs to be pre initialised, in superuser
-    # child process, Which is being written to ".boot_kali.sh" file.
-    echo "# This file is a part of 'boot-nethunter'," >> .boot_kali.sh
-    echo "# Don't Modify anything until you are fully aware of what you are doing ..." >> .boot_kali.sh
-    echo " " >> .boot_kali.sh
-    echo "export PATH=\$PATH:/product/bin" >> .boot_kali.sh
-    echo "export PATH=\$PATH:/apex/com.android.runtime/bin" >> .boot_kali.sh
-    echo "export PATH=\$PATH:/odm/bin" >> .boot_kali.sh
-    echo "export PATH=\$PATH:/vendor/bin" >> .boot_kali.sh
-    echo "export PATH=\$PATH:/vendor/xbin" >> .boot_kali.sh
-    echo "export PATH=\$PATH:/data/data/com.offsec.nethunter/files/scripts" >> .boot_kali.sh
-    echo "export PATH=\$PATH:/data/data/com.offsec.nethunter/files/scripts/bin" >> .boot_kali.sh
-    echo "bootkali" >> .boot_kali.sh
-    echo " " >> .boot_kali.sh
-    echo "# Author: Aravind Swami [github: name-is-cipher]" >> .boot_kali.sh
-    echo "# Mail: aravindswami135@gmail.com" >> .boot_kali.sh
+    # child process, Which is being written to "$HOME/.termux/boot_kali.sh" file.
+    echo "# This file is a part of 'boot-nethunter'," >> $HOME/.termux/boot_kali.sh
+    echo "# Don't Modify anything until you are fully aware of what you are doing ..." >> $HOME/.termux/boot_kali.sh
+    echo " " >> $HOME/.termux/boot_kali.sh
+    echo "export PATH=\$PATH:/product/bin" >> $HOME/.termux/boot_kali.sh
+    echo "export PATH=\$PATH:/apex/com.android.runtime/bin" >> $HOME/.termux/boot_kali.sh
+    echo "export PATH=\$PATH:/odm/bin" >> $HOME/.termux/boot_kali.sh
+    echo "export PATH=\$PATH:/vendor/bin" >> $HOME/.termux/boot_kali.sh
+    echo "export PATH=\$PATH:/vendor/xbin" >> $HOME/.termux/boot_kali.sh
+    echo "export PATH=\$PATH:/data/data/com.offsec.nethunter/files/scripts" >> $HOME/.termux/boot_kali.sh
+    echo "export PATH=\$PATH:/data/data/com.offsec.nethunter/files/scripts/bin" >> $HOME/.termux/boot_kali.sh
+    echo "bootkali" >> $HOME/.termux/boot_kali.sh
+    echo " " >> $HOME/.termux/boot_kali.sh
+    echo "# Author: Aravind Swami [github: name-is-cipher]" >> $HOME/.termux/boot_kali.sh
+    echo "# Mail: aravindswami135@gmail.com" >> $HOME/.termux/boot_kali.sh
 
-    # This Adds executive permissions to ".boot_kali.sh" file.
-    chmod +x .boot_kali.sh
+    # This Adds executive permissions to "$HOME/.termux/boot_kali.sh" file.
+    chmod +x $HOME/.termux/boot_kali.sh
 
-    # It sources ".boot_kali.sh" to superuser child process same as before but, only for the 1st time.
-    su -c source ./.boot_kali.sh
+    # It sources "$HOME/.termux/boot_kali.sh" to superuser child process same as before but, only for the 1st time.
+    su -c source ./$HOME/.termux/boot_kali.sh
 
 fi
 
