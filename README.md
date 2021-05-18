@@ -1,5 +1,5 @@
 # Boot Nethunter
-- It is an executable that boots Kali-Chroot (_one Installed with Nethunter_) in Termux. [Rooted Andriod]
+- It is an executable that boots Kali-Chroot (_one Installed with Nethunter apk_) in Termux. [Rooted Andriod]
 
 **NOTE**: This is not same as _Nethunter Rootless_.
 
