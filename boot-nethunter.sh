@@ -1,6 +1,11 @@
 # This is a simple shell script whcih checkes for "$HOME/.termux/boot_kali.sh" file in present directory,
 # if presents it executes kali Chroot, if not it creates one and executes kali Chroot.
 
+source banner-boot_nethunter.sh
+print_banner
+
+<<'COMMENTS'
+
 TERMUX=$HOME/.termux  # Variable name FILE is being assigned to the file in present directory.
 BOOTKALI=$HOME/.termux/boot_kali.sh
 
@@ -46,3 +51,7 @@ fi
 
 # Author: Aravind Swami [github: name-is-cipher]
 # Mail: aravindswami135@gmail.com
+
+COMMENTS
+
+echo "hi"
