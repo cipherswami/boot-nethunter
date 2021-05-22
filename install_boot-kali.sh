@@ -1,5 +1,5 @@
-# This is boot-nethunter installer file,
-# you can safly delete after installation.
+# This is boot-nethunter installer,
+# you can delete this file safely after installation.
 
 function banner_boot-nethunter() {
 
@@ -8,12 +8,12 @@ function banner_boot-nethunter() {
   reset='\033[0m'
 
     clear
-    printf "  ${blue}#####################################\n"
-    printf "  ${blue}##                                 ##\n"
-    printf "  ${blue}##         Boot-Nethunter          ##\n"
-    printf "  ${blue}##                                 ##\n"
-    printf "  ${blue}#####################################\n\n"
-    printf "  ${blue}||||||||||  ${light_cyan}name-is-cipher  ${blue}||||||||||\n"
+    printf "  ${blue}##############################\n"
+    printf "  ${blue}##                          ##\n"
+    printf "  ${blue}##     Boot-Nethunter       ##\n"
+    printf "  ${blue}##                          ##\n"
+    printf "  ${blue}##############################\n"
+    printf "  ${blue}|||||| ${light_cyan}name-is-cipher ${blue}||||||||\n"
     printf "  ${blue}--------------------------------------${reset}"
     echo "  "
     echo "  "
@@ -57,6 +57,14 @@ function check_tbin() {
 
     fi
 
+}
+
+function clean_cipherus() {
+
+    if [ -f cipherus-libraries.sh ]; then
+        rm cipherus-libraries.sh
+        rm ~/.wget-hsts
+    fi
 }
 
 function ibar {
@@ -128,7 +136,9 @@ function install_boot-nethunter() {
     echo " [*] Installation successful !!!"
     echo " "
     echo "> Run 'boot-kali' anywhere to start Kali Chroot."
-    echo "  This needs reboot of termux first..."
+    echo " "
+    echo " [*] Termux needs to be restarted to work properly,"
+    echo "     Please restart !"
     echo " "
     read 
     exit
