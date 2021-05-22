@@ -13,10 +13,10 @@ function banner_boot-nethunter() {
     printf "  ${blue}##         Boot-Nethunter          ##\n"
     printf "  ${blue}##                                 ##\n"
     printf "  ${blue}#####################################\n\n"
-      echo "  ${blue}||||||||||  ${light_cyan}name-is-cipher  ${blue}||||||||||"
-            echo "---------------------------------------------${reset}"
-            echo "  "
-            echo "  "
+    printf "  ${blue}||||||||||  ${light_cyan}name-is-cipher  ${blue}||||||||||\n"
+    printf "  ${blue}--------------------------------------${reset}"
+    echo "  "
+    echo "  "
     
 }
 
@@ -59,6 +59,46 @@ function check_tbin() {
 
 }
 
+function ibar {
+
+    FILE=$1
+    BAR='##############################'
+    FILL='------------------------------'
+    Lines=$2  # To No. lines in file that need to be present.
+    barLen=30 # Bar Lenght of progressbar.
+    count=0
+
+    echo " "
+    # --- iterate over lines in of passed on file ---
+    while IFS=, read -r line; do
+    # update progress bar
+    sleep 0.1
+    count=$(($count + 1))
+    percent=$((($count * 100 / $Lines * 100) / 100))
+    i=$(($percent * $barLen / 100))
+    echo -ne "\r[${BAR:0:$i}${FILL:$i:barLen}] $count/$Lines ($percent %)"
+    done < $FILE
+    echo " "
+
+    # Integrity checker
+    if [ $percent != 100 ]; then
+    echo " "
+    echo " [!] File is corrupt, Please try to reinstall !!!"
+    echo " "
+    echo " If you keep seeing this error, contact the Author:-"
+    echo " "
+    echo " github: name-is-cipher"
+    echo " Twitter: name_is_cipher"
+    echo " Mail: aravindswami135@gmail.com"
+    clean_cipherus
+    read
+    exit
+    fi
+    echo " "
+    echo " "
+
+}
+
 function install_boot-nethunter() {
 
     echo " [*] Installing Boot Nethunter ..."
@@ -66,20 +106,20 @@ function install_boot-nethunter() {
     # Making boot-kali.sh
 
     echo "# This scrpit boots nethunter in termux" >> ~/.termux/bin/boot-kali.sh
-    echo " " >> ~/.termux/boot-kali.sh
+    echo " " >> ~/.termux/bin/boot-kali.sh
     echo "su -c '" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$PATH:/system/sbin" >> ~/.termux/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/product/bin" >> ~/.termux/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/apex/com.android.runtime/bin" >> ~/.termux/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/odm/bin" >> ~/.termux/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/vendor/bin" >> ~/.termux/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/vendor/xbin" >> ~/.termux/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts" >> ~/.termux/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/boot-kali.sh
-    echo "export PATH=\$nethunter_env; exec su" >> ~/.termux/boot-kali.sh
-    echo " " >> ~/.termux/boot-kali.sh
-    echo "# Author: Aravind Swami [github: name-is-cipher]" >> ~/.termux/boot-kali.sh
-    echo "# Mail: aravindswami135@gmail.com" >> ~/.termux/boot-kali.sh
+    echo "nethunter_env=\$PATH:/system/sbin" >> ~/.termux/bin/boot-kali.sh
+    echo "nethunter_env=\$nethunter_env:/product/bin" >> ~/.termux/bin/boot-kali.sh
+    echo "nethunter_env=\$nethunter_env:/apex/com.android.runtime/bin" >> ~/.termux/bin/boot-kali.sh
+    echo "nethunter_env=\$nethunter_env:/odm/bin" >> ~/.termux/bin/boot-kali.sh
+    echo "nethunter_env=\$nethunter_env:/vendor/bin" >> ~/.termux/bin/boot-kali.sh
+    echo "nethunter_env=\$nethunter_env:/vendor/xbin" >> ~/.termux/bin/boot-kali.sh
+    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts" >> ~/.termux/bin/boot-kali.sh
+    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/bin/boot-kali.sh
+    echo "export PATH=\$nethunter_env; exec su" >> ~/.termux/bin/boot-kali.sh
+    echo " " >> ~/.termux/bin/boot-kali.sh
+    echo "# Author: Aravind Swami [github: name-is-cipher]" >> ~/.termux/bin/boot-kali.sh
+    echo "# Mail: aravindswami135@gmail.com" >> ~/.termux/bin/boot-kali.sh
 
     chmod +x ~/.termux/bin/boot-kali.sh
     ibar ~/.termux/bin/boot-kali.sh 15
