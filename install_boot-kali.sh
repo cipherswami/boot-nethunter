@@ -72,7 +72,7 @@ function ibar {
     # --- iterate over lines in of passed on file ---
     while IFS=, read -r line; do
     # update progress bar
-    sleep 0.5
+    sleep 0.3
     count=$(($count + 1))
     percent=$((($count * 100 / $Lines * 100) / 100))
     i=$(($percent * $barLen / 100))
