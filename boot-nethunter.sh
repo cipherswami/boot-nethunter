@@ -1,57 +1,105 @@
-# This is a simple shell script whcih checkes for "$HOME/.termux/boot_kali.sh" file in present directory,
-# if presents it executes kali Chroot, if not it creates one and executes kali Chroot.
+# This is boot-nethunter installer file,
+# you can safly delete after installation.
 
-source banner-boot_nethunter.sh
-print_banner
+function banner_boot-nethunter() {
 
-<<'COMMENTS'
+  blue='\033[1;34m'
+  light_cyan='\033[1;96m'
+  reset='\033[0m'
 
-TERMUX=$HOME/.termux  # Variable name FILE is being assigned to the file in present directory.
-BOOTKALI=$HOME/.termux/boot_kali.sh
+    clear
+    printf "  ${blue}#####################################\n"
+    printf "  ${blue}##                                 ##\n"
+    printf "  ${blue}##         Boot-Nethunter          ##\n"
+    printf "  ${blue}##                                 ##\n"
+    printf "  ${blue}#####################################\n\n"
+      echo "  ${blue}||||||||||  ${light_cyan}name-is-cipher  ${blue}||||||||||"
+            echo "---------------------------------------------${reset}"
+            echo "  "
+            echo "  "
+    
+}
 
-if [ -f "$TERMUX" ]; then
+function check_update() {
 
-else
+if [ ! -d ~/.termux ]; then
 
-    mkdir .termux
-
+    clear
+    echo " "
+    echo " [!] Your are on older version of Termux !!!"
+    echo "     Updating Termux...."
+    sleep 4
+    apt update
+    clear
+    echo " [!] if 'y/n' prompted any, hit -> y"
+    sleep 5
+    apt upgrade -y
+    apt install wget -y
+    clear
+    echo " "
+    echo " [*] You need to completly restart the termux, "
+    echo "     And start the installation again !!!"
+    echo " "
+    exit;
 fi
 
-if [ -f "BOOTKALI" ]; then
+}
 
-    # sources "$HOME/.termux/boot_kali.sh" to superuser child process.
-    su -c source ./$HOME/.termux/boot_kali.sh 
+function check_tbin() {
 
-else 
+    if [ ! -d ~/.termux/bin ]; then
+        
+        mkdir ~/.termux/bin
+        echo " " >> ~/.bashrc
+        echo "# This PATH is for Termux superuser bin folder" >> ~/.bashrc
+        echo " " >> ~/.bashrc
+        echo "export PATH=\$PATH:/data/data/com.termux/files/home/.termux/bin" >> ~/.bashrc
 
-    # This is the envirnoment that needs to be pre initialised, in superuser
-    # child process, Which is being written to "$HOME/.termux/boot_kali.sh" file.
-    echo "# This file is a part of 'boot-nethunter'," >> $HOME/.termux/boot_kali.sh
-    echo "# Don't Modify anything until you are fully aware of what you are doing ..." >> $HOME/.termux/boot_kali.sh
-    echo " " >> $HOME/.termux/boot_kali.sh
-    echo "export PATH=\$PATH:/product/bin" >> $HOME/.termux/boot_kali.sh
-    echo "export PATH=\$PATH:/apex/com.android.runtime/bin" >> $HOME/.termux/boot_kali.sh
-    echo "export PATH=\$PATH:/odm/bin" >> $HOME/.termux/boot_kali.sh
-    echo "export PATH=\$PATH:/vendor/bin" >> $HOME/.termux/boot_kali.sh
-    echo "export PATH=\$PATH:/vendor/xbin" >> $HOME/.termux/boot_kali.sh
-    echo "export PATH=\$PATH:/data/data/com.offsec.nethunter/files/scripts" >> $HOME/.termux/boot_kali.sh
-    echo "export PATH=\$PATH:/data/data/com.offsec.nethunter/files/scripts/bin" >> $HOME/.termux/boot_kali.sh
-    echo "bootkali" >> $HOME/.termux/boot_kali.sh
-    echo " " >> $HOME/.termux/boot_kali.sh
-    echo "# Author: Aravind Swami [github: name-is-cipher]" >> $HOME/.termux/boot_kali.sh
-    echo "# Mail: aravindswami135@gmail.com" >> $HOME/.termux/boot_kali.sh
+    fi
 
-    # This Adds executive permissions to "$HOME/.termux/boot_kali.sh" file.
-    chmod +x $HOME/.termux/boot_kali.sh
+}
 
-    # It sources "$HOME/.termux/boot_kali.sh" to superuser child process same as before but, only for the 1st time.
-    su -c source ./$HOME/.termux/boot_kali.sh
+function install_boot-nethunter() {
 
-fi
+    echo " [*] Installing Boot Nethunter ..."
+    echo " "
+    # Making boot-nethunter.sh
 
-# Author: Aravind Swami [github: name-is-cipher]
-# Mail: aravindswami135@gmail.com
+    echo "# This scrpit boots nethunter in termux" >> ~/.termux/bin/boot-nethunter.sh
+    echo " " >> ~/.termux/boot_nethunter.sh
+    echo "su -c '" >> ~/.termux/bin/boot-nethunter.sh
+    echo "nethunter_env=\$PATH:/system/sbin" >> ~/.termux/boot_nethunter.sh
+    echo "nethunter_env=\$nethunter_env:/product/bin" >> ~/.termux/boot_nethunter.sh
+    echo "nethunter_env=\$nethunter_env:/apex/com.android.runtime/bin" >> ~/.termux/boot_nethunter.sh
+    echo "nethunter_env=\$nethunter_env:/odm/bin" >> ~/.termux/boot_nethunter.sh
+    echo "nethunter_env=\$nethunter_env:/vendor/bin" >> ~/.termux/boot_nethunter.sh
+    echo "nethunter_env=\$nethunter_env:/xbin" >> ~/.termux/boot_nethunter.sh
+    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts" >> ~/.termux/boot_nethunter.sh
+    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/boot_nethunter.sh
+    echo "export PATH=\$nethunter_env; exec su" >> ~/.termux/boot_nethunter.sh
+    echo " " >> ~/.termux/boot_nethunter.sh
+    echo "# Author: Aravind Swami [github: name-is-cipher]" >> ~/.termux/boot_nethunter.sh
+    echo "# Mail: aravindswami135@gmail.com" >> ~/.termux/boot_nethunter.sh
 
-COMMENTS
+    chmod +x ~/.termux/bin/boot-nethunter.sh
+    ibar ~/.termux/bin/boot-nethunter.sh 15
+    echo " "
+    echo " [*] Installation successful !!!"
+    echo " "
+    echo "> Run 'boot-nethunter.sh' anywhere to start Kali Chroot."
+    echo " "
+    read 
+    exit
 
-echo "hi"
+}
+
+############ Main #############
+
+banner_boot-nethunter
+
+check_update
+
+check_tbin
+
+install_boot-nethunter
+
