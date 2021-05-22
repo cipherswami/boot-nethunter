@@ -72,7 +72,7 @@ function ibar {
     # --- iterate over lines in of passed on file ---
     while IFS=, read -r line; do
     # update progress bar
-    sleep 0.1
+    sleep 0.5
     count=$(($count + 1))
     percent=$((($count * 100 / $Lines * 100) / 100))
     i=$(($percent * $barLen / 100))
@@ -116,7 +116,7 @@ function install_boot-nethunter() {
     echo "nethunter_env=\$nethunter_env:/vendor/xbin" >> ~/.termux/bin/boot-kali.sh
     echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts" >> ~/.termux/bin/boot-kali.sh
     echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/bin/boot-kali.sh
-    echo "export PATH=\$nethunter_env; exec su" >> ~/.termux/bin/boot-kali.sh
+    echo "export PATH=\$nethunter_env; exec bootkali'" >> ~/.termux/bin/boot-kali.sh
     echo " " >> ~/.termux/bin/boot-kali.sh
     echo "# Author: Aravind Swami [github: name-is-cipher]" >> ~/.termux/bin/boot-kali.sh
     echo "# Mail: aravindswami135@gmail.com" >> ~/.termux/bin/boot-kali.sh
@@ -127,6 +127,7 @@ function install_boot-nethunter() {
     echo " [*] Installation successful !!!"
     echo " "
     echo "> Run 'boot-kali.sh' anywhere to start Kali Chroot."
+    echo "  This needs reboot of termux first..."
     echo " "
     read 
     exit
