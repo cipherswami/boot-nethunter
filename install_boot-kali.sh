@@ -103,30 +103,31 @@ function install_boot-nethunter() {
 
     echo " [*] Installing Boot Nethunter ..."
     echo " "
-    # Making boot-kali.sh
+    # Making boot-kali
 
-    echo "# This scrpit boots nethunter in termux" >> ~/.termux/bin/boot-kali.sh
-    echo " " >> ~/.termux/bin/boot-kali.sh
-    echo "su -c '" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$PATH:/system/sbin" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/product/bin" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/apex/com.android.runtime/bin" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/odm/bin" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/vendor/bin" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/vendor/xbin" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts" >> ~/.termux/bin/boot-kali.sh
-    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/bin/boot-kali.sh
-    echo "export PATH=\$nethunter_env; exec bootkali'" >> ~/.termux/bin/boot-kali.sh
-    echo " " >> ~/.termux/bin/boot-kali.sh
-    echo "# Author: Aravind Swami [github: name-is-cipher]" >> ~/.termux/bin/boot-kali.sh
-    echo "# Mail: aravindswami135@gmail.com" >> ~/.termux/bin/boot-kali.sh
+    echo "#! /data/data/com.termux/files/usr/bin/bash" >> ~/.termux/bin/boot-kali
+    echo "# This scrpit boots nethunter in termux" >> ~/.termux/bin/boot-kali
+    echo >> ~/.termux/bin/boot-kali
+    echo "su -c '" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$PATH:/system/sbin" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/product/bin" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/apex/com.android.runtime/bin" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/odm/bin" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/vendor/bin" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/vendor/xbin" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/bin/boot-kali
+    echo "export PATH=\$nethunter_env; exec bootkali'" >> ~/.termux/bin/boot-kali
+    echo >> ~/.termux/bin/boot-kali
+    echo "# Author: Aravind Swami [github: name-is-cipher]" >> ~/.termux/bin/boot-kali
+    echo "# Mail: aravindswami135@gmail.com" >> ~/.termux/bin/boot-kali
 
-    chmod +x ~/.termux/bin/boot-kali.sh
-    ibar ~/.termux/bin/boot-kali.sh 15
+    chmod +x ~/.termux/bin/boot-kali
+    ibar ~/.termux/bin/boot-kali 16
     echo " "
     echo " [*] Installation successful !!!"
     echo " "
-    echo "> Run 'boot-kali.sh' anywhere to start Kali Chroot."
+    echo "> Run 'boot-kali' anywhere to start Kali Chroot."
     echo "  This needs reboot of termux first..."
     echo " "
     read 
