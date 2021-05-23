@@ -10,23 +10,25 @@ If you have ever used Nethunter-Rooted, then you would have definitely come acro
 If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild. Then this is the right place.
 
 # Pre-Requisites
-1. Install git in Termux: `pkg install git`
-2. Grant root access to Termux by entering the following command: `su`  
-   and grant root access with what ever root manager you use.
-3. Close termux and reopen again(exit).
+1. Update Termux to latest Version:
+    - `$ apt update`
+    - `$ apt uprade -y`
+2. Install git: `$ pkg install git`
+3. If prompeted for superuser access to termux, grant it.
+4. Restart the Termux.
 
 # Setup Instructions
-1. Git this repo to HOME directory of Termux: `git clone https://github.com/name-is-cipher/boot-nethunter.git $HOME/Nethunter`
-2. Copy "boot-nethunter.sh" file from download git folder to HOME directory of Termux: `cp $HOME/Nethunter/boot-nethunter.sh $HOME/`
-3. Make "boot-nethunter.sh" executable: `chmod +x $HOME/boot-nethunter.sh`
-5. et voilà, setup is finshed !!!
-6. Run the executable to boot kali-Chroot: `./boot-nethunter.sh`
+1. Git clone this repo to your HOME directory of Termux: 
+   `$ git clone https://github.com/name-is-cipher/boot-nethunter.git`
+3. Now, move into 'boot-nethunter' folder, there you will find installer "install_boot-kali.sh".
+4. Make "install_boot-kali.sh" executable: `$ chmod +x install_boot-kali.sh`
+5. Now just run: `$ ./install_boot-kali.sh`
+6. et voilà, your installation is finshed !!!
+7. Now you can safely remove the installer folder from HOME directory: `rm -rf boot-nethunter`
+8. USAGE: Run 'boot-kali' any where in termux to start kali chroot.
 
-# Additinol Tweaks
-- Direct Run the file i.e execute `boot-nethuter` instead of `./boot-nethunter` .  
-  This is done by adding HOME directory to PATHs Variable, which is implemented by _**.bashrc**_ file.  
-  You can simply copy my _.bashrc_ file that is included in the Repo: `cp $HOME/Nethunter/.bashrc $HOME`     
-If you already have your own _.bashrc_ file, then you can add contents of my  _.bashrc_ file to the end of your _.bashrc_ file.
+# Additinol info
+- This intallation creates a execuatable "bin" folder in $HOME/.termux folder, you can place your any personal binaries or executables in that folder.
 
 # Creator
 > **Author**: [name_is_cipher](https://github.com/name-is-cipher)  
