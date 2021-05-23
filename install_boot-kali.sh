@@ -1,4 +1,4 @@
-#! /data/data/com.termux/files/usr/bin/bash
+#! /data/data/com.andriod/files/usr/bin/bash
 
 # This is boot-nethunter installer,
 # you can delete this file safely after installation.
