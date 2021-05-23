@@ -12,7 +12,7 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 # Pre-Requisites
 1. Update Termux to latest Version:
     - `$ apt update`
-    - `$ apt uprade -y`
+    - `$ apt upgrade -y`
 2. Install git: `$ pkg install git`
 3. Restart the Termux.
 4. If prompeted for superuser access to termux at any point, grant it.
