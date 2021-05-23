@@ -19,7 +19,7 @@ function banner_boot-nethunter() {
     printf "  ${blue}--------------------------------------${reset}"
     echo "  "
     echo "  "
-    
+
 }
 
 function check_update() {
@@ -50,7 +50,7 @@ fi
 function check_tbin() {
 
     if [ ! -d ~/.termux/bin ]; then
-        
+
         mkdir ~/.termux/bin
         echo " " >> ~/.bashrc
         echo "# This PATH is for Termux superuser bin folder" >> ~/.bashrc
@@ -142,7 +142,7 @@ function install_boot-nethunter() {
     echo " [*] Termux needs to be restarted to work properly,"
     echo "     Please restart !"
     echo " "
-    read 
+    read
     exit
 
 }
@@ -158,4 +158,3 @@ check_tbin
 install_boot-nethunter
 
 ##############################
-
