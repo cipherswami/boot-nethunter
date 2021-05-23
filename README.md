@@ -14,8 +14,8 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
     - `$ apt update`
     - `$ apt uprade -y`
 2. Install git: `$ pkg install git`
-3. If prompeted for superuser access to termux at any point, grant it.
-4. Restart the Termux.
+3. Restart the Termux.
+4. If prompeted for superuser access to termux at any point, grant it.
 
 # Setup Instructions
 1. Git clone this repo to your HOME directory of Termux, and inside find installer "install_boot-kali":   
