@@ -115,8 +115,7 @@ function install_boot-nethunter() {
     echo " "
 
     # Making boot-kali
-    echo > ~/.termux/bin/boot-kali
-    echo "#! /data/data/com.termux/files/usr/bin/bash" >> ~/.termux/bin/boot-kali
+    echo "#! /data/data/com.termux/files/usr/bin/bash" > ~/.termux/bin/boot-kali
     echo "# This scrpit boots nethunter in termux" >> ~/.termux/bin/boot-kali
     echo >> ~/.termux/bin/boot-kali
     echo "su -c '" >> ~/.termux/bin/boot-kali
