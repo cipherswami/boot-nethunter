@@ -21,7 +21,7 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 1. Directly download the installer(install_boot-kali.sh) from releases:    
    `$ wget https://github.com/name-is-cipher/boot-nethunter/releases/download/v1.0/install_boot-kali.sh`  
 4. Then make the installer executable: `$ chmod +x install_boot-kali.sh`
-5. Now just install by running: `$ ./install_boot-kali.sh`
+5. Now install boot nethunter: `$ ./install_boot-kali.sh`
 6. et voilà, your installation is finshed !!!
 7. Now you can safely get rid of the installer : `$ rm instll_boot-kali.sh`
 8. **USAGE**: Run 'boot-kali' any where in termux to start kali chroot.
