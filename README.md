@@ -30,7 +30,7 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 8. **USAGE**: Run 'boot-kali' any where in termux to start kali chroot.
 
 # Additinol info
-- This intallation creates a "bin" folder in $HOME/.termux which is being added to PATH variable i.e, you can place any binaries (or) executables in that folder that can be called from any where in termux.
+- This intallation creates a "bin" folder in $HOME/.termux folder, which is being added to PATH variable i.e, you can place any binaries (or) executables in that folder that can be called from any where in termux.
 
 # Creator
 > **Author**: [name_is_cipher](https://github.com/name-is-cipher)  
