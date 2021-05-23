@@ -18,7 +18,7 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 4. Restart the Termux.
 
 # Setup Instructions
-1. Git clone this repo to your HOME directory of Termux: 
+1. Git clone this repo to your HOME directory of Termux:   
    `$ git clone https://github.com/name-is-cipher/boot-nethunter.git`
 3. Now, move into 'boot-nethunter' folder, there you will find installer "install_boot-kali.sh".
 4. Make "install_boot-kali.sh" executable: `$ chmod +x install_boot-kali.sh`
