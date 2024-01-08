@@ -13,13 +13,12 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 1. Update Termux to latest Version:
     - `$ apt update`
     - `$ apt upgrade -y`
-2. Install git: `$ pkg install git`
-3. Restart the Termux.
-4. If prompeted for superuser access to termux at any point, grant it.
+2. Restart the Termux.
+3. If prompeted for superuser access to termux at any point, grant it.
 
 # Setup Instructions
 1. Directly download the installer(install_boot-kali.sh) from releases:    
-   `$ wget https://github.com/name-is-cipher/boot-nethunter/releases/download/v1.1/install_boot-kali.sh`  
+   `$ wget https://github.com/name-is-cipher/boot-nethunter/releases/latest/download/install_boot-kali.sh`  
 4. Then make the installer executable: `$ chmod +x install_boot-kali.sh`
 5. Now install boot nethunter: `$ ./install_boot-kali.sh`
 6. et voilà, your installation is finshed !!!
@@ -29,7 +28,8 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 # Additinol info
 - This intallation creates a "bin" folder in $HOME/.termux direcotry, which is being added to PATH variable i.e, you can place any binaries (or) executables in that folder that can be called from any where in termux.
 
-# Creator
-> **Author**: [name_is_cipher](https://github.com/name-is-cipher)  
+# About Author
+> **Name**: Aravind Potluri <CIPH3R>
 > **Mail**: aravindswami135@gmail.com
+> **Github**: [name_is_cipher](https://github.com/name-is-cipher)  
 
