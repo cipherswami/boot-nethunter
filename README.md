@@ -29,7 +29,7 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 - This intallation creates a "bin" folder in $HOME/.termux direcotry, which is being added to PATH variable i.e, you can place any binaries (or) executables in that folder that can be called from any where in termux.
 
 # About Author
-> **Name**: Aravind Potluri <CIPH3R>
-> **Mail**: aravindswami135@gmail.com
+> **Name**: Aravind Potluri <CIPH3R>  
+> **Mail**: aravindswami135@gmail.com  
 > **Github**: [name_is_cipher](https://github.com/name-is-cipher)  
 
