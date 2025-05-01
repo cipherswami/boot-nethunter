@@ -5,7 +5,7 @@
 
 ## File Name:    install_bootkali.sh v1.1
 # Author:       Aravind Potluri (CIPH3R) <aravindswami135@gmail.com>
-# Description:  Installs boot-kali script that can start nethunter's chroot in other 
+# Description:  Installs boot-kali script that can start nethunter's chroot in other
 #               terminal like termux.
 
 ## Msg for Devs:
@@ -27,7 +27,6 @@ function banner_boot-nethunter()
     printf "  ${blue}##     Boot-Nethunter       ##\n"
     printf "  ${blue}##                          ##\n"
     printf "  ${blue}##############################\n"
-    printf "  ${blue}|||||| ${light_cyan}name-is-cipher ${blue}||||||||\n"
     printf "  ${blue}--------------------------------------${reset}"
     echo "  "
     echo "  "
@@ -117,6 +116,7 @@ function install_boot-nethunter()
 {
     echo " [*] Installing Boot Nethunter ..."
     echo " "
+    su -c cp -r /data/data/com.offsec.nethunter /data/local
 
     # Making boot-kali
     echo "#! /data/data/com.termux/files/usr/bin/bash" > ~/.termux/bin/boot-kali
@@ -129,25 +129,34 @@ function install_boot-nethunter()
     echo "nethunter_env=\$nethunter_env:/odm/bin" >> ~/.termux/bin/boot-kali
     echo "nethunter_env=\$nethunter_env:/vendor/bin" >> ~/.termux/bin/boot-kali
     echo "nethunter_env=\$nethunter_env:/vendor/xbin" >> ~/.termux/bin/boot-kali
-    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts" >> ~/.termux/bin/boot-kali
-    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/scripts" >> ~/.termux/bin/boot-kali
-    echo "nethunter_env=\$nethunter_env:/data/data/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/data/local/com.offsec.nethunter/files/scripts" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/data/local/com.offsec.nethunter/scripts" >> ~/.termux/bin/boot-kali
+    echo "nethunter_env=\$nethunter_env:/data/local/com.offsec.nethunter/files/scripts/bin" >> ~/.termux/bin/boot-kali
     echo "export PATH=\$nethunter_env; exec bootkali'" >> ~/.termux/bin/boot-kali
     echo >> ~/.termux/bin/boot-kali
+    echo "for rcfile in \"\$KALI_HOME/.zshrc\" \"\$KALI_HOME/.bashrc\"; do" >> ~/.termux/bin/boot-kali
+    echo "  if [ -f \"\$rcfile\" ] && ! grep -q \"TMPDIR=/tmp\" \"\$rcfile\"; then" >> ~/.termux/bin/boot-kali
+    echo "    echo \"export TMPDIR=/tmp\" >> \"\$rcfile\"" >> ~/.termux/bin/boot-kali
+    echo "  fi" >> ~/.termux/bin/boot-kali
+    echo "done" >> ~/.termux/bin/boot-kali
+    
     echo "# Author: Aravind Swami [github: name-is-cipher]" >> ~/.termux/bin/boot-kali
     echo "# Mail: aravindswami135@gmail.com" >> ~/.termux/bin/boot-kali
+    echo "# Modified by abidhasansojib" >> ~/.termux/bin/boot-kali
 
     chmod +x ~/.termux/bin/boot-kali
-    ibar ~/.termux/bin/boot-kali 17 # Integrity checker, the number argument to ibar is number of lines in boot-kali script.
+    ibar ~/.termux/bin/boot-kali 23 # Integrity checker, the number argument to ibar is number of lines in boot-kali script.
     echo " "
     echo " [*] Installation successful !!!"
     echo " "
     echo "> Run 'boot-kali' anywhere to start Kali Chroot."
     echo " "
-    echo " [*] Termux needs to be restarted to work properly,"
+    echo " [*] Termux needs be restarted to work properly,"
     echo "     Please restart !"
     echo " "
     read
+    cd
+    cp .termux/bin/boot-kali /data/data/com.termux/files/usr/bin
     exit
 }
 
