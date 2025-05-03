@@ -29,6 +29,12 @@ If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild
 pkg install git && git clone https://github.com/abidhasansojib/boot-nethunter.git && cd boot-nethunter && chmod +x install_boot-kali.sh && ./install_boot-kali.sh
 ```
 
+If you still face any issues about tmp directory run this in nethunter terminal
+
+```bash
+cd && echo "export TMPDIR=/tmp" >> .zshrc
+```
+
 
 8. **USAGE**: Run 'boot-kali' any where in termux to start kali chroot.
 
