@@ -1,39 +1,72 @@
 # Boot Nethunter
 
-- It is an executable that boots Kali-Chroot (_one Installed with Nethunter_) in Termux. [Rooted Andriod]
+Boots the **Kali Chroot (Nethunter-Rooted)** environment directly inside **Termux**, giving you a fully functional rooted Kali interface with Termux’s flexibility and customizability.
 
-**NOTE**: This is not same as _Nethunter Rootless_.
+> [!IMPORTANT]
+>
+> Rooted Android Phone Required
 
-# Motive
+> [!NOTE]
+>
+> Hey everyone,
+>
+> I originally created this for my own convenience, but since so many of you are now using it (which is awesome), I’m restructuring and cleaning things up properly to make it more consistent and reliable. For anyone who has **old forks**, please **discard old commits** when syncing — the old code is preserved in **`v1.0.0`**, but all new work will be structured differently going forward.
 
-If you have ever used Nethunter-Rooted, then you would have definitely come across Nethunter-terminal. _Nethunter-terminal_ is one of the good interfaces but, it doesn't support that much customizability when compared to other interfaces such as Termux.
+## Motive
 
-If you ever took a fancy to start the _Rooted Kali chroot_ in _termux_ but faild. Then this is the right place.
+If you’ve ever used **Nethunter-Rooted**, you’ve likely come across the **Nethunter Terminal**. While it’s solid, it doesn’t offer the same customizability or integration that **Termux** provides.
 
-# Pre-Requisites
+**Boot Nethunter** bridges that gap — it lets you boot the **rooted Kali chroot** directly inside Termux, with all the benefits of your familiar Termux environment.
 
-1. Update Termux to latest Version:
-   - `$ apt update`
-   - `$ apt upgrade -y`
-2. Restart the Termux.
-3. If prompeted for superuser access to termux at any point, grant it.
+## Pre-Requisites
 
-# Setup Instructions
+1. Update Termux to the latest version:
 
-1. Directly download the installer(install_boot-kali.sh) from releases:  
-   `$ wget https://github.com/cipherswami/boot-nethunter/releases/download/v1.0.0/install_boot-kali.sh`
-2. Then make the installer executable: `$ chmod +x install_boot-kali.sh`
-3. Now install boot nethunter: `$ ./install_boot-kali.sh`
-4. et voilà, your installation is finshed !!!
-5. Now you can safely get rid of the installer : `$ rm instll_boot-kali.sh`
-6. **USAGE**: Run 'boot-kali' any where in termux to start kali chroot.
+   ```bash
+   apt update && apt upgrade -y
+   ```
 
-# Additinol info
+2. Restart Termux. If prompted for **superuser access** at any point, **grant it**.
 
-- This intallation creates a "bin" folder in $HOME/.termux direcotry, which is being added to PATH variable i.e, you can place any binaries (or) executables in that folder that can be called from any where in termux.
+## Instructions
 
-- If you still face any issues about tmp directory run this in nethunter terminal
+1. Download the installer:
 
-```bash
-cd && echo "export TMPDIR=/tmp" >> .zshrc
-```
+   ```bash
+   wget https://github.com/cipherswami/boot-nethunter/releases/download/v1.0.0/install_boot-kali.sh
+   ```
+
+2. Make it executable:
+
+   ```bash
+   chmod +x install_boot-kali.sh
+   ```
+
+3. Run the installer:
+
+   ```bash
+   ./install_boot-kali.sh
+   ```
+
+4. **et voilà!** Installation complete 🎉. Now, clean up:
+
+   ```bash
+   rm install_boot-kali.sh
+   ```
+
+## Usage
+
+Run `boot-kali` anywhere inside Termux to start the **Kali chroot** environment.
+
+## Additional Info
+
+- Installation creates a `bin` folder under `$HOME/.termux/`, which is automatically added to your `PATH`.
+- You can drop any binaries or executables into that folder and call them globally from Termux.
+
+## People
+
+Author: **Aravind Potluri** <[aravindswami135@gmail.com](mailto:aravindswami135@gmail.com)>
+
+## LICENSE
+
+This project is licensed under MIT license. See [LICENSE](./LICENSE) for more details.
